@@ -19,6 +19,13 @@ h1 {
   color: black;
 }
 
+p {
+  margin: 20px;
+  font-size: 4rem;
+  text-align: center;
+  color: black;
+}
+
 main {
   display: flex;
   width: 90%;

@@ -9,7 +9,22 @@ const keyboardLetters = [
 
 let listElement = [];
 let myAnswer = [];
-const secretWord = ["p", "l", "a", "t", "z", "i"];
+
+let myArray = [
+  ["p", "l", "a", "t", "z", "i"],
+  ["d", "o", "r", "m", "i", "r"],
+  ["l", "a", "g", "u", "n", "a"],
+];
+
+var rand = Math.floor(Math.random() * myArray.length);
+var rValue = myArray[rand];
+
+let secretWord = rValue;
+
+var pistaSecret = document.getElementById("secretWord");
+
+pistaSecret.textContent =
+  "Adivina la palabra secreta, empieza por " + secretWord[0].toUpperCase();
 
 let positions = [];
 let attempts = 0;
@@ -141,4 +156,10 @@ const clickReset = () => {
   attempts = 0;
   listElement = [];
   myAnswer = [];
+  rand = Math.floor(Math.random() * myArray.length);
+  rValue = myArray[rand];
+  secretWord = rValue;
+  pistaSecret = document.getElementById("secretWord");
+  pistaSecret.textContent =
+    "Adivina la palabra secreta, empieza por " + secretWord[0].toUpperCase();
 };
