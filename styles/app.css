@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+h1 {
+  margin: 20px;
+  font-size: 4rem;
+  text-align: center;
+  color: black;
+}
+
+main {
+  display: flex;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+
+.button-reset {
+  width: 64px;
+  height: 32px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 8px;
+}
+
+.grid {
+  margin: 20px 20px;
+}
+
+.grid__row {
+  display: flex;
+  padding: 4px;
+}
+
+.grid__item {
+  display: flex;
+  width: 44px;
+  height: 40px;
+  margin: 0 4px;
+  font-size: 3.2rem;
+  border: 2px solid black;
+  list-style: none;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.keyboard {
+  margin-bottom: 40px;
+}
+
+.keyboard__list {
+  display: flex;
+  list-style: none;
+}
+
+.keyboard__list--item {
+  margin: 1px;
+}
+
+.keyboard__button {
+  width: 30px;
+  height: 40px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 8px;
+}
+
+.keyboard__button--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+#enter {
+  width: 62px;
+}
+
+.keyboard__button--delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-icon {
+  width: 20px;
+  filter: invert(100%);
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 50%;;
+    min-width: 800px;
+  }
+
+  main div {
+    width: 456px;
+  }
+
+  .button-reset {
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  .button-reset:hover {
+    opacity: 0.8;
+  }
+
+  .grid__item {
+    width: 60px;
+    height: 40px;
+    margin: 0 8px;
+  }
+
+  .keyboard {
+    margin-bottom: 0px;
+  }
+
+  .keyboard__list--item {
+    margin: 2px;
+  }
+
+  .keyboard__button {
+    width: 60px;
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  .keyboard__button:hover {
+    opacity: 0.8;
+  }
+
+
+  #enter {
+    width: 124px;
+  }
+
+  .delete-icon {
+    width: 24px;
+  }
+
+}
