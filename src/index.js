@@ -10,21 +10,19 @@ const keyboardLetters = [
 let listElement = [];
 let myAnswer = [];
 
-let myArray = [
-  ["p", "l", "a", "t", "z", "i"],
-  ["d", "o", "r", "m", "i", "r"],
-  ["l", "a", "g", "u", "n", "a"],
-];
+let myArray = ["platzi", "dormir", "laguna"];
 
-var rand = Math.floor(Math.random() * myArray.length);
-var rValue = myArray[rand];
+let rand = Math.floor(Math.random() * myArray.length);
+let rValue = myArray[rand];
 
-let secretWord = rValue;
+let str = rValue;
+let arr = str.split("");
 
-var pistaSecret = document.getElementById("secretWord");
+let secretWord = arr;
 
-pistaSecret.textContent =
-  "Adivina la palabra secreta, empieza por " + secretWord[0].toUpperCase();
+let spanLetter = document.getElementById("letter");
+
+spanLetter.textContent = secretWord[0].toUpperCase();
 
 let positions = [];
 let attempts = 0;
@@ -78,12 +76,12 @@ keyboard.append(...listElement);
 
 const checkWord = () => {
   if (myAnswer.join("") === secretWord.join("")) {
-    alert("Ganaste");
+    Swal.fire("Ganaste. Dale al boton de reset");
     let keyboard = document.getElementById("keyboard");
     keyboard.classList.add("keyboard__button--disabled");
   }
   if (attempts === 5) {
-    alert("Ya no tienes intentos");
+    Swal.fire("Ya no tienes intentos");
     return;
   }
   if (myAnswer.length === 6) {
@@ -97,7 +95,7 @@ const checkWord = () => {
           positions.push("yellow");
           break;
         default:
-          positions.push("gray");
+          positions.push("brown");
           break;
       }
     }
@@ -108,13 +106,13 @@ const checkWord = () => {
     positions = [];
     myAnswer = [];
   } else {
-    alert(`Tu respuesta tiene ${myAnswer.length} caracteres aun le faltan`);
+    Swal.fire(`Tu respuesta tiene ${myAnswer.length} caracteres aun le faltan`);
   }
 };
 
 const deleteLetter = () => {
   if (myAnswer.length === 0) {
-    alert("No tienes nada escrito");
+    Swal.fire("No tienes nada escrito");
   } else {
     const currentItem = document.getElementById(
       `${attempts}-${myAnswer.length - 1}`
@@ -134,7 +132,7 @@ const pressLetter = (letter) => {
     console.log(currentItem.textContent);
     myAnswer.push(letter);
   } else {
-    alert("Tu palabra esta completa");
+    Swal.fire("Tu palabra esta completa. Dale al boton de enter");
   }
 };
 
@@ -149,17 +147,22 @@ const clickReset = () => {
       item.textContent = "";
       item.classList.remove("green");
       item.classList.remove("yellow");
-      item.classList.remove("gray");
+      item.classList.remove("brown");
     }
   }
   positions = [];
   attempts = 0;
   listElement = [];
   myAnswer = [];
+
   rand = Math.floor(Math.random() * myArray.length);
   rValue = myArray[rand];
-  secretWord = rValue;
-  pistaSecret = document.getElementById("secretWord");
-  pistaSecret.textContent =
-    "Adivina la palabra secreta, empieza por " + secretWord[0].toUpperCase();
+
+  str = rValue;
+  arr = str.split("");
+
+  secretWord = arr;
+
+  spanLetter = document.getElementById("letter");
+  spanLetter.textContent = secretWord[0].toUpperCase();
 };

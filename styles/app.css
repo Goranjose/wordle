@@ -1,3 +1,11 @@
+/* MOBILE */
+:root {
+  --color-title: #CED89E;
+  --color-text: #76BA99;
+  --color-grid: #FFDCAE;
+  --color-keyboard: #ADCF9F;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,19 +18,25 @@ html {
 
 body {
   font-family: Helvetica, sans-serif;
+  /* background-color: black; */
 }
 
-h1 {
+.title {
   margin: 20px;
   font-size: 4rem;
   text-align: center;
-  color: black;
+  color: var(--color-title);
 }
 
-p {
+.sub-title {
   margin: 20px;
-  font-size: 4rem;
+  font-size: 2rem;
   text-align: center;
+  color: var(--color-text);
+
+}
+
+.secret-letter {
   color: black;
 }
 
@@ -48,9 +62,9 @@ main div {
   width: 64px;
   height: 32px;
   font-size: 2rem;
-  color: white;
+  color: black;
   cursor: pointer;
-  background-color: black;
+  background-color: var(--color-keyboard);
   border-radius: 8px;
 }
 
@@ -69,22 +83,22 @@ main div {
   height: 40px;
   margin: 0 4px;
   font-size: 3.2rem;
-  border: 2px solid black;
+  border: 2px solid var(--color-grid);
   list-style: none;
   justify-content: center;
   align-items: flex-end;
 }
 
 .green {
-  background-color: green;
+  background-color: #008000;
 }
 
 .yellow {
   background-color: yellow;
 }
 
-.gray {
-  background-color: gray;
+.brown {
+  background-color: #6c4434;
 }
 
 .keyboard {
@@ -93,20 +107,21 @@ main div {
 
 .keyboard__list {
   display: flex;
+  margin: 0 auto;
   list-style: none;
 }
 
 .keyboard__list--item {
-  margin: 1px;
+  margin: 2px;
 }
 
 .keyboard__button {
-  width: 30px;
+  width: 32px;
   height: 40px;
   font-size: 2rem;
-  color: white;
+  color: black;
   cursor: pointer;
-  background-color: black;
+  background-color: var(--color-keyboard);
   border-radius: 8px;
 }
 
@@ -116,7 +131,7 @@ main div {
 }
 
 #enter {
-  width: 62px;
+  width: 68px;
 }
 
 .keyboard__button--delete {
@@ -127,12 +142,12 @@ main div {
 
 .delete-icon {
   width: 20px;
-  filter: invert(100%);
 }
 
+/* DESKTOP */
 @media (min-width: 768px) {
   main {
-    width: 50%;;
+    width: 50%;
     min-width: 800px;
   }
 
@@ -154,10 +169,6 @@ main div {
     width: 60px;
     height: 40px;
     margin: 0 8px;
-  }
-
-  .keyboard {
-    margin-bottom: 0px;
   }
 
   .keyboard__list--item {
@@ -183,4 +194,21 @@ main div {
     width: 24px;
   }
 
+}
+
+
+.swal2-title {
+  font-size: 2rem;
+}
+
+.swal2-styled.swal2-confirm {
+  font-size: 1.6rem !important;
+  box-shadow: none !important;
+  background-color: var(--color-keyboard) !important;
+  font-weight: 600 !important;
+}
+
+.info-game {
+  font-size: 1.6rem;
+  text-align: justify;
 }

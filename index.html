@@ -11,8 +11,10 @@
 
 <body>
   <header>
-    <h1>Wordle</h1>
-    <p id="secretWord"></p>
+    <h1 class="title">Wordle</h1>
+    <h2 class="sub-title" id="sub-title">Adivina la palabra secreta, empieza por <span class="secret-letter"
+        id="letter"></span>
+    </h2>
   </header>
 
   <main>
@@ -24,6 +26,8 @@
     <section class="keyboard" id="keyboard"></section>
   </main>
   <script src="./src/index.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./src/sweetAlert.js"></script>
 </body>
 
 </html>
