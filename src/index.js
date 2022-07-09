@@ -1,3 +1,13 @@
+const btnInfo = document.getElementById("info");
+
+btnInfo.addEventListener("click", () => {
+  Swal.fire({
+    title: "Cómo jugar",
+    html: "<p class='info-game'>Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra.</br>🟢Verde está en la palabra y en la posición correcta.</br>🟡 Amarillo está en la palabra pero en la posición incorrecta.</br>🟤 Marron no está en la palabra.</p>",
+    icon: "info",
+  });
+});
+
 const keyboard = document.getElementById("keyboard");
 const grid = document.getElementById("grid");
 
@@ -74,6 +84,7 @@ keyboardLetters.map((letters) => {
 
 keyboard.append(...listElement);
 
+// ENTER BUTTON
 const checkWord = () => {
   if (myAnswer.join("") === secretWord.join("")) {
     Swal.fire("Ganaste. Dale al boton de reset");
@@ -81,7 +92,7 @@ const checkWord = () => {
     keyboard.classList.add("keyboard__button--disabled");
   }
   if (attempts === 5) {
-    Swal.fire("Ya no tienes intentos");
+    noAttempts();
     return;
   }
   if (myAnswer.length === 6) {
@@ -110,6 +121,7 @@ const checkWord = () => {
   }
 };
 
+// DELETE BUTTON
 const deleteLetter = () => {
   if (myAnswer.length === 0) {
     Swal.fire("No tienes nada escrito");
@@ -120,9 +132,19 @@ const deleteLetter = () => {
     currentItem.textContent = "";
     myAnswer.pop();
   }
+
+  if (attempts === 5) {
+    noAttempts();
+    return;
+  }
 };
 
 const pressLetter = (letter) => {
+  if (attempts === 5) {
+    noAttempts();
+    return;
+  }
+
   keyboard.classList.remove("keyboard__button--disabled");
   if (myAnswer.length < 6) {
     const currentItem = document.getElementById(
@@ -136,6 +158,8 @@ const pressLetter = (letter) => {
   }
 };
 
+
+// RESET BUTTON
 const btnReset = document.getElementById("reset");
 btnReset.addEventListener("click", () => clickReset());
 
@@ -165,4 +189,8 @@ const clickReset = () => {
 
   spanLetter = document.getElementById("letter");
   spanLetter.textContent = secretWord[0].toUpperCase();
+};
+
+const noAttempts = () => {
+  return Swal.fire("Ya no tienes intentos. Dale al boton de reset");
 };

@@ -41,7 +41,7 @@ Swal.fire({
   // },
 
   // showConfirmButton:
-  // confirmButtonColor: "#ADCF9F",
+  // confirmButtonColor:
   // confirmButtonAriaLabel:
 
   // showCancelButton:

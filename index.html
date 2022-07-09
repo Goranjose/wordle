@@ -6,21 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./styles/app.css" rel="stylesheet">
-  <title>Wordle</title>
+  <link href="./assets/wordle-icon.png" rel="icon">
+  <title>Wordle Game
+  </title>
 </head>
 
 <body>
   <header>
     <h1 class="title">Wordle</h1>
-    <h2 class="sub-title" id="sub-title">Adivina la palabra secreta, empieza por <span class="secret-letter"
-        id="letter"></span>
-    </h2>
   </header>
 
   <main>
-    <div>
+    <div class="container-buttons">
+      <button class="button-info" id="info">Info</button>
       <button class="button-reset" id="reset">Reset</button>
     </div>
+    <h2 class="sub-title" id="sub-title">Adivina la palabra secreta, empieza por <span class="secret-letter" id="letter"></span>
+    </h2>
     <section class="grid" id="grid">
     </section>
     <section class="keyboard" id="keyboard"></section>

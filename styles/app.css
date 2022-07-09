@@ -18,7 +18,6 @@ html {
 
 body {
   font-family: Helvetica, sans-serif;
-  /* background-color: black; */
 }
 
 .title {
@@ -26,14 +25,6 @@ body {
   font-size: 4rem;
   text-align: center;
   color: var(--color-title);
-}
-
-.sub-title {
-  margin: 20px;
-  font-size: 2rem;
-  text-align: center;
-  color: var(--color-text);
-
 }
 
 .secret-letter {
@@ -50,12 +41,24 @@ main {
   align-items: center;
 }
 
-main div {
+.container-buttons {
   display: flex;
   width: 100%;
-  flex-direction: column;
+  margin: 0 auto;
+  flex-direction: row;
   justify-content: center;
-  align-items: end;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.button-info {
+  width: 64px;
+  height: 32px;
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+  background-color: var(--color-keyboard);
+  border-radius: 8px;
 }
 
 .button-reset {
@@ -66,6 +69,13 @@ main div {
   cursor: pointer;
   background-color: var(--color-keyboard);
   border-radius: 8px;
+}
+
+.sub-title {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--color-text);
+  margin-top: 20px;
 }
 
 .grid {
@@ -90,11 +100,11 @@ main div {
 }
 
 .green {
-  background-color: #008000;
+  background-color: #08d46c;
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: #fcd43c;
 }
 
 .brown {
@@ -151,8 +161,18 @@ main div {
     min-width: 800px;
   }
 
-  main div {
-    width: 456px;
+  .container-buttons {
+    width: 100%;
+  }
+
+  .button-info {
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  .button-info:hover {
+    opacity: 0.8;
   }
 
   .button-reset {
@@ -196,6 +216,10 @@ main div {
 
 }
 
+.swal2-icon.swal2-info {
+  color: var(--color-grid) !important;
+  border-color: var(--color-grid) !important;
+}
 
 .swal2-title {
   font-size: 2rem;
